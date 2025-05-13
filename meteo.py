@@ -6,7 +6,7 @@ import pandas as pd
 #from dotenv import load_dotenv
 #load_dotenv()
 
-API_key=st.secrets("api_key")
+API_key=st.secrets["api_key"]
 #API_key=os.getenv("api_key")
 
 
