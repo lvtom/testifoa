@@ -3,10 +3,11 @@ import requests
 import os
 import pandas as pd
 
-from dotenv import load_dotenv
-load_dotenv()
+#from dotenv import load_dotenv
+#load_dotenv()
 
-API_key=os.getenv("api_key")
+API_key=st.secrets("api_key")
+#API_key=os.getenv("api_key")
 
 
 def getweather(city_name):
@@ -47,7 +48,7 @@ def main():
             data = getweather(city_names)
            
             df = pd.DataFrame({"lat":[ data['coord']['lat']], "lon": [data['coord']['lon']]})
-            st.map(df)
+            st.map(df, color='#000000')
            
         
     with col2:
